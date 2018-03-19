@@ -5,19 +5,22 @@
  */
 package week6_methods;
 import java.util.Scanner;
+// imported scanner to allow for user input.
 /**
  *
  * @author lexus.fitzpatrick
  */
 public class LexiiFriendLevels {
-    
+    // decided that it was easier to make a prompt quiz method rather than jam everything into main.
     public static void main(String[] args){
         promptQuiz ();
-    }// close main
         
+    }// close main
+     // prompt quiz is my initial start of my program.   
     public static void promptQuiz (){
     Scanner friendScanner = new Scanner(System.in);
-        
+        // scanner allows for user input.
+        // this is where i prompt users to decide which quiz they would like to take.
         System.out.println("Which quiz would you like to take?");
         System.out.println("1 = Friend Quiz? ");
         System.out.println("2 = Best Friend Quiz?");
@@ -25,8 +28,8 @@ public class LexiiFriendLevels {
         System.out.println("Enter the number of the quiz you would like to take.");
         int userChoice;
         userChoice = friendScanner.nextInt();
-        
-        
+        // i set an int to help initiate my switch.
+        // switch enables users to enter which number they want and will sned them to the desired quiz.
         switch(userChoice){
             case 1: 
                 friendQuiz(friendScanner);
@@ -45,9 +48,11 @@ public class LexiiFriendLevels {
         }// close switch
     }// close promptQuiz
                 
-                
+           // this is my friend quiz which prompts the user for this quiz.     
     public static void friendQuiz (Scanner friend){
         int counter = 0;
+        // i set an int for a counter so each question can be answered and if the counter satisfies the if statement then they pass,
+        //if not then they don't and are prompted.
         System.out.println("Welcome to the friend quiz! "
                 + "Press enter to continue.");
         friend.nextLine();
@@ -58,6 +63,7 @@ public class LexiiFriendLevels {
         if(friend.nextInt() == 2){
         
             counter++;
+            // counter++ adds an additional number to the int counter when the if is satisfied.
         }// end if
         System.out.println("Do you like nature?");
         if(friend.nextInt() == 2){
@@ -86,6 +92,7 @@ public class LexiiFriendLevels {
             counter++;
         }// end if
         if(counter >= 2){
+            // this is the if that determines whether the user passed or not.
             System.out.println("I'm sorry, but we can't be friends.");
             quizExit("friend");
             System.out.println("Would you like to see why we can't be friends?");
@@ -108,7 +115,7 @@ public class LexiiFriendLevels {
         }// close if/ else
     }// close friend Quiz
 
-    
+    // the best friend quiz and friend forever quiz follow the same pattern as the friend quiz, just different questions.
     public static void bestFriendQuiz (Scanner friend){
         int counter = 0;
         System.out.println("Welcome to the best friend Quiz! Press enter to continue!");
@@ -267,7 +274,7 @@ public class LexiiFriendLevels {
         System.out.println("Thank you for taking the " + thanks + " quiz!");
     }// close quizExit
             
-            
+         // users have the options in their quizzes if they fail to see the proper answers.   
     public static void friendAnswers(Scanner friend){
         System.out.println("Here is why we can't be friends. Press Enter to continue. "
                 + " Press enter after each answer.");
@@ -275,6 +282,7 @@ public class LexiiFriendLevels {
         friend.nextLine();
         System.out.println("I absolutely adore music. I'm sorry if you don't.");
         friend.nextLine();
+        // friend.nextLine allows users to read what's given and then press enter for the next answer.
         System.out.println("Nature is so melodic to me. It puts me on cloud nine.");
         friend.nextLine();
         System.out.println("I believe that everything is art. Appreciation for"
@@ -390,28 +398,6 @@ public class LexiiFriendLevels {
         
         
         
-        
-        
-        
-        
-        
-                
-    
-        
-    
-        
-                
-            
-                
-            
-        
-            
-    
-        
-        
-        
-        
-    
 }// close class
                 
                 
